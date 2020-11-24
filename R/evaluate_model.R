@@ -1,6 +1,6 @@
 #' Evaluate the pre-defined Neural Network for Longitudinal Data 
 #' 
-#' @param model The fitted model object produced by model().
+#' @param model The fitted model object produced by create_model().
 #' @param X1_test Features as inputs of 1st LSTM.
 #' @param X2_test Features as inputs of 2nd LSTM.
 #' @param X3_test Features as inputs of 3rd LSTM.
@@ -43,6 +43,6 @@ evaluate_model <- function(model, X1_test, X2_test, X3_test, X4_test, X5_test, X
                           inp8 = X8_test,
                           inp9 = X9_test,
                           inp10 = X10_test,
-                          inpif = Xif_test), y_test=y_test, batch_size = bsize)
+                          inpif = Xif_test), y_test, batch_size = bsize)
   return(res)
 }

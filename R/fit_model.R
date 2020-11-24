@@ -1,6 +1,6 @@
 #' Fit the pre-defined Neural Network for Longitudinal Data 
 #' 
-#' @param model The model object produced by model().
+#' @param model The model object produced by create_model().
 #' @param ver ver=0 to show nothing, ver=1 to show animated progress bar, ver=2 to just mention the number of epoch during training. 
 #' @param n_epoch The number of epochs to train the model.
 #' @param bsize The batch size.
@@ -50,7 +50,7 @@ fit_model<-function(model, ver, n_epoch, bsize, X1, X2, X3, X4, X5, X6, X7, X8, 
     verbose = 0 # not printing
   )
   
-  trained_model <- model %>% keras::fit(
+  trained_model <- model %>% fit(
     x = list(inp1 = X1,
              inp2 = X2,
              inp3 = X3,
@@ -67,7 +67,7 @@ fit_model<-function(model, ver, n_epoch, bsize, X1, X2, X3, X4, X5, X6, X7, X8, 
   epochs = n_epoch, # how many times we'll look at the whole dataset
   validation_split = 0.1, # how much data to hold out for testing as we go along
   callbacks = list(cp_callback),  # pass callback to training
-  verbose = ver) # not printing during training
+  verbose = ver) # printing during training
 
   fitted = model %>% load_model_weights_tf(filepath = checkpoint_path)
 

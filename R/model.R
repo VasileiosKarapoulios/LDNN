@@ -11,7 +11,7 @@
 #' @return The model object built in Keras.
 #' @description DESCRIPTION TO BE INCLUDED
 #' @examples
-#' model(rnn_inputs = c(20,24,24,24,16,16,16,16,16,15),
+#' create_model(rnn_inputs = c(20,24,24,24,16,16,16,16,16,15),
 #'       recurrent_droppout = c(0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1),
 #'       inputs = 232,
 #'       layer_dropout = c(0.1,0.1),
@@ -19,16 +19,8 @@
 #'       loss_function = 'mean_squared_error',
 #'       opt = 'adam',
 #'       metric = 'mean_absolute_error')
-#' @export model
-model<-function(rnn_inputs, recurrent_droppout, inputs, layer_dropout, n_nodes_hidden_layers, loss_function, opt, metric){
-  #if(!is.numeric(rnn_inputs) || !is.numeric(inputs) || !is.numeric(n_nodes_hidden_layers)){
-    #print("Wrong type of inputs")
-    #stop()
-  #}
-  #if(recurrent_droppout > 1 || layer_dropout > 1){
-    #print("Wrong input in one of the dropout layers")
-    #stop()
-  #}
+#' @export create_model
+create_model<-function(rnn_inputs, recurrent_droppout, inputs, layer_dropout, n_nodes_hidden_layers, loss_function, opt, metric){
   set.seed(1234)
   tensorflow::use_session_with_seed(1234)
   
