@@ -1,7 +1,7 @@
 Package: LDNN
 Type: Package
 Title: Longitudinal Data Neural Network
-Version: 1.0
+Version: 1.1
 Date: 2020-10-11
 Author: Vasileios Karapoulios
 Maintainer: <billkarap123@gmail.com>
