@@ -17,7 +17,7 @@
 #' @param Xif The features to be concatenated with the outputs of the LSTMs.
 #' @param y The target variable.
 #' @return The fitted model.
-#' @description DESCRIPTION TO BE INCLUDED
+#' @description Fit the created Neural Network model (Keras).
 #' @examples
 #' fit_model(model = model,
 #'     ver = 0,

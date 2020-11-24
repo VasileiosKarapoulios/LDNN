@@ -24,7 +24,7 @@ fit_model(
 )
 }
 \arguments{
-\item{model}{The model object produced by model().}
+\item{model}{The model object produced by create_model().}
 
 \item{ver}{ver=0 to show nothing, ver=1 to show animated progress bar, ver=2 to just mention the number of epoch during training.}
 
@@ -60,7 +60,7 @@ fit_model(
 The fitted model.
 }
 \description{
-DESCRIPTION TO BE INCLUDED
+Fit the created Neural Network model (Keras).
 }
 \examples{
 fit_model(model = model,

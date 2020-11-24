@@ -15,7 +15,7 @@
 #' @param y_test The target variable.
 #' @param bsize The batch size.
 #' @return The evaluation results.
-#' @description DESCRIPTION TO BE INCLUDED
+#' @description Evaluate the fitted Neural Network model (Keras).
 #' @examples
 #' evaluate_model(model = model,
 #'     X1_test = X1_test, 

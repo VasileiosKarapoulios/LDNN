@@ -9,7 +9,7 @@
 #' @param opt The optimizer to be used.
 #' @param metric The metric to be used.
 #' @return The model object built in Keras.
-#' @description DESCRIPTION TO BE INCLUDED
+#' @description Create the Neural Network model (Keras).
 #' @examples
 #' create_model(rnn_inputs = c(20,24,24,24,16,16,16,16,16,15),
 #'       recurrent_droppout = c(0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1),

@@ -36,7 +36,7 @@ create_model(
 The model object built in Keras.
 }
 \description{
-DESCRIPTION TO BE INCLUDED
+Create the Neural Network model (Keras).
 }
 \examples{
 create_model(rnn_inputs = c(20,24,24,24,16,16,16,16,16,15),

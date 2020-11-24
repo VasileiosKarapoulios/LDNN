@@ -22,7 +22,7 @@ evaluate_model(
 )
 }
 \arguments{
-\item{model}{The fitted model object produced by model().}
+\item{model}{The fitted model object produced by create_model().}
 
 \item{X1_test}{Features as inputs of 1st LSTM.}
 
@@ -54,7 +54,7 @@ evaluate_model(
 The evaluation results.
 }
 \description{
-DESCRIPTION TO BE INCLUDED
+Evaluate the fitted Neural Network model (Keras).
 }
 \examples{
 evaluate_model(model = model,
