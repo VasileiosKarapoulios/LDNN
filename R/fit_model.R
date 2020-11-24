@@ -19,7 +19,7 @@
 #' @return The fitted model.
 #' @description DESCRIPTION TO BE INCLUDED
 #' @examples
-#' fit(model = model,
+#' fit_model(model = model,
 #'     ver = 0,
 #'     n_epochs = 200,
 #'     bsize = 32,
@@ -35,8 +35,8 @@
 #'     X10 = X10,
 #'     Xif = Xif,
 #'     y = y)
-#' @export fit
-fit<-function(model, ver, n_epoch, bsize, X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, Xif, y){
+#' @export fit_model
+fit_model<-function(model, ver, n_epoch, bsize, X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, Xif, y){
   set.seed(1234)
   
   checkpoint_path <- "checkpoints/cp.ckpt"
