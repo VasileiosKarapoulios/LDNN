@@ -10,3 +10,4 @@ License: GNU General Public License
 RoxygenNote: 7.1.1
 LazyData: true
 Encoding: UTF-8
+Imports: keras,devtools,reticulate,tensorflow
