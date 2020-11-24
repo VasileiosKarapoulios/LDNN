@@ -16,21 +16,6 @@
 #' @param bsize The batch size.
 #' @return The evaluation results.
 #' @description Evaluate the fitted Neural Network model (Keras).
-#' @examples
-#' evaluate_model(model = model,
-#'     X1_test = X1_test, 
-#'     X2_test = X2_test, 
-#'     X3_test = X3_test,
-#'     X4_test = X4_test,
-#'     X5_test = X5_test,
-#'     X6_test = X6_test,
-#'     X7_test = X7_test,
-#'     X8_test = X8_test,
-#'     X9_test = X9_test,
-#'     X10_test = X10_test,
-#'     Xif_test = Xif_test,
-#'     y_test = y_test,
-#'     bsize = 32)
 #' @export evaluate_model
 evaluate_model <- function(model, X1_test, X2_test, X3_test, X4_test, X5_test, X6_test, X7_test, X8_test, X9_test, X10_test, Xif_test, y_test, bsize){
   res = model %>% evaluate(list(inp1 = X1_test,

@@ -62,21 +62,3 @@ The fitted model.
 \description{
 Fit the created Neural Network model (Keras).
 }
-\examples{
-fit_model(model = model,
-    ver = 0,
-    n_epochs = 200,
-    bsize = 32,
-    X1 = X1, 
-    X2 = X2, 
-    X3 = X3,
-    X4 = X4,
-    X5 = X5,
-    X6 = X6,
-    X7 = X7,
-    X8 = X8,
-    X9 = X9,
-    X10 = X10,
-    Xif = Xif,
-    y = y)
-}
