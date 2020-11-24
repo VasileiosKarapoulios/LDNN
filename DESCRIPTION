@@ -1,0 +1,12 @@
+Package: LDNN
+Type: Package
+Title: Longitudinal Data Neural Network
+Version: 1.0
+Date: 2020-10-11
+Author: Vasileios Karapoulios
+Maintainer: <vaska579@student.liu.se>
+Description: This is a NN regression model implementation consisting of 10 LSTM layers that are fully connected along with the rest of the inputs.
+License: GNU General Public License
+RoxygenNote: 7.1.1
+LazyData: true
+Encoding: UTF-8
