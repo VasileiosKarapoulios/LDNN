@@ -22,8 +22,8 @@
 #' @export create_model
 create_model<-function(rnn_inputs, recurrent_droppout, inputs, layer_dropout, n_nodes_hidden_layers, loss_function, opt, metric){
   set.seed(1234)
-  #tensorflow::tf$random$set_seed(1234)
-  tf$random$set_seed(1234)
+  #tensorflow::use_session_with_seed(1234)
+  tensorflow::tf$random$set_seed(1234)
   
   inp1 <- layer_input(shape = c(rnn_inputs[1],1), name="inp1")
   inp2 <- layer_input(shape = c(rnn_inputs[2],1), name="inp2")
