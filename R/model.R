@@ -11,14 +11,11 @@
 #' @return The model object built in Keras.
 #' @description Create the Neural Network model (Keras).
 #' @examples
-#' create_model(rnn_inputs = c(20,24,24,24,16,16,16,16,16,15),
-#'       recurrent_droppout = c(0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1),
-#'       inputs = 232,
-#'       layer_dropout = c(0.1,0.1),
-#'       n_nodes_hidden_layers = c(1024,1024),
-#'       loss_function = 'mean_squared_error',
-#'       opt = 'adam',
-#'       metric = 'mean_absolute_error')
+#' inp = c(20,24,24,24,16,16,16,16,16,15)
+#' rec_drop = rep(0.1,10)
+#' l_drop = c(0.1,0.1)
+#' create_model(inp,rec_drop,232,c(0.1,0.1),l_drop,'mean_squared_error','adam','mean_absolute_error')
+#' @import keras
 #' @export create_model
 create_model<-function(rnn_inputs, recurrent_droppout, inputs, layer_dropout, n_nodes_hidden_layers, loss_function, opt, metric){
   set.seed(1234)

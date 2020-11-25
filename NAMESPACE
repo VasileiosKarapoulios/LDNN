@@ -3,3 +3,4 @@
 export(create_model)
 export(evaluate_model)
 export(fit_model)
+import(keras)

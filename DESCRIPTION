@@ -1,10 +1,10 @@
 Package: LDNN
 Type: Package
 Title: Longitudinal Data Neural Network
-Version: 1.1
-Date: 2020-10-11
+Version: 1.5
+Date: 2020-25-11
 Author: Vasileios Karapoulios
-Maintainer: <billkarap123@gmail.com>
+Maintainer: Vasileios Karapoulios <billkarap123@gmail.com>
 Description: This is a NN regression model implementation using Keras, consisting of 10 LSTM layers that are fully connected along with the rest of the inputs.
 License: GNU General Public License
 RoxygenNote: 7.1.1
@@ -12,3 +12,6 @@ LazyData: true
 Encoding: UTF-8
 Imports: devtools,reticulate,tensorflow
 Depends: keras
+Suggests: 
+    testthat,knitr,rmarkdown
+VignetteBuilder: knitr

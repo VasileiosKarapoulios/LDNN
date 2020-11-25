@@ -1,0 +1,162 @@
+---
+title: "LDNN package"
+author: "Vasileios Karapoulios"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{LDNN package}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+```
+
+## LDNN package
+
+This is an implementation of the longitudinal data neural network package in R. The package is uploaded in [Github](https://github.com/VasileiosKarapoulios/LDNN). 
+
+Regressions coefficients, fitted values, residuals, degrees of freedom, residual variance, variance of the regression coefficients and t-values for each coefficient were calculated using linear algebra equations. 
+
+## Create the model
+
+`example<-create_model(rnn_inputs = c(20,24,24,24,16,16,16,16,16,15),recurrent_droppout =c(0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1),inputs = 232,layer_dropout = c(0.1,0.1),n_nodes_hidden_layers = c(1024,1024),loss_function = 'mean_squared_error',opt = 'adam',metric = 'mean_absolute_error')`
+
+### Arguments
+
+`rnn_inputs`:  The number of inputs (integers) per each LSTM (vector of length 10).
+
+`recurrent_droppout`: The dropout to be applied in the LSTMs (between 0 and 1).
+
+`inputs`: The number of inputs (integer) to be concatenated with the output of the LSTMs.
+
+`layer_dropout`: The dropout to be applied between the hidden layers (between 0 and 1).
+
+`n_nodes_hidden_layers`: The number of nodes in the hidden layers (2 in total).
+
+`loss_function`: The loss function to be used.
+
+`opt`: The optimizer to be used.
+
+`metric`: The metric to be used.
+
+
+## Fit the model
+
+`example<-fit_model(model = model,ver = 0, n_epoch = 1,bsize = 32,X1 = X1, X2 = X2, X3 = X3,X4 = X4,X5 = X5,X6 = X6,X7 = X7,X8 = X8,X9 = X9,X10 = X10,Xif = Xif,y = y)`
+
+### Arguments
+
+`model`:  The model object produced by create_model().
+
+`ver`: ver=0 to show nothing, ver=1 to show animated progress bar, ver=2 to just mention the number of epoch during training.
+
+`n_epoch`: The number of epochs to train the model.
+
+`bsize`: The batch size.
+
+`X1`: Features as inputs of 1st LSTM.
+
+`X2`: Features as inputs of 2nd LSTM.
+
+`X3`: Features as inputs of 3rd LSTM.
+
+`X4`: Features as inputs of 4th LSTM.
+
+`X5`: Features as inputs of 5th LSTM.
+
+`X6`: Features as inputs of 6th LSTM.
+
+`X7`: Features as inputs of 7th LSTM.
+
+`X8`: Features as inputs of 8th LSTM.
+
+`X9`: Features as inputs of 9th LSTM.
+
+`X10`: Features as inputs of 10th LSTM.
+
+`Xif`: The features to be concatenated with the outputs of the LSTMs.
+
+`y`: The target variable.
+
+## Evaluate the model
+
+`example<-evaluate_model(model = fitted_model,X1_test = X1_test, X2_test = X2_test, X3_test = X3_test,X4_test = X4_test,X5_test = X5_test,X6_test = X6_test,X7_test = X7_test,X8_test = X8_test,X9_test = X9_test,X10_test = X10_test,Xif_test = Xif_test,y_test = y_test,bsize = 32)`
+
+### Arguments
+
+`model`: The fitted model object produced by create_model().
+
+`X1_test`: Features as inputs of 1st LSTM.
+
+`X2_test`: Features as inputs of 2nd LSTM.
+
+`X3_test`: Features as inputs of 3rd LSTM.
+
+`X4_test`: Features as inputs of 4th LSTM.
+
+`X5_test`: Features as inputs of 5th LSTM.
+
+`X6_test`: Features as inputs of 6th LSTM.
+
+`X7_test`: Features as inputs of 7th LSTM.
+
+`X8_test`: Features as inputs of 8th LSTM.
+
+`X9_test`: Features as inputs of 9th LSTM.
+
+`X10_test`: Features as inputs of 10th LSTM.
+
+`Xif_test`: The features to be concatenated with the outputs of the LSTMs.
+
+`y_test`: The target variable.
+
+`bsize`: The batch size.
+
+## Examples
+
+After installing the package run the following commands in an R session:
+
+```{r }
+library(LDNN)
+set.seed(12345)
+#Train dummy data
+X1 <- matrix(runif(500*20), nrow=500, ncol=20)
+X2 <- matrix(runif(500*24), nrow=500, ncol=24)
+X3 <- matrix(runif(500*24), nrow=500, ncol=24)
+X4 <- matrix(runif(500*24), nrow=500, ncol=24)
+X5 <- matrix(runif(500*16), nrow=500, ncol=16)
+X6 <- matrix(runif(500*16), nrow=500, ncol=16)
+X7 <- matrix(runif(500*16), nrow=500, ncol=16)
+X8 <- matrix(runif(500*16), nrow=500, ncol=16)
+X9 <- matrix(runif(500*16), nrow=500, ncol=16)
+X10 <- matrix(runif(500*15), nrow=500, ncol=15)
+Xif <- matrix(runif(500*232), nrow=500, ncol=232)
+y <- matrix(runif(500), nrow=500, ncol=1)
+#Test dummy data
+X1_test <- matrix(runif(500*20), nrow=500, ncol=20)
+X2_test <- matrix(runif(500*24), nrow=500, ncol=24)
+X3_test <- matrix(runif(500*24), nrow=500, ncol=24)
+X4_test <- matrix(runif(500*24), nrow=500, ncol=24)
+X5_test <- matrix(runif(500*16), nrow=500, ncol=16)
+X6_test <- matrix(runif(500*16), nrow=500, ncol=16)
+X7_test <- matrix(runif(500*16), nrow=500, ncol=16)
+X8_test <- matrix(runif(500*16), nrow=500, ncol=16)
+X9_test <- matrix(runif(500*16), nrow=500, ncol=16)
+X10_test <- matrix(runif(500*15), nrow=500, ncol=15)
+Xif_test <- matrix(runif(500*232), nrow=500, ncol=232)
+y_test <- matrix(runif(500), nrow=500, ncol=1)
+#Create the model
+model = create_model(rnn_inputs = c(20,24,24,24,16,16,16,16,16,15),
+              recurrent_droppout = c(0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1),
+              inputs = 232,
+              layer_dropout = c(0.1,0.1),
+              n_nodes_hidden_layers = c(1024,1024),
+              loss_function = 'mean_squared_error',
+              opt = 'adam',
+              metric = 'mean_absolute_error')
+#Fit the model
+fitted_model = fit_model(model = model,ver = 0, n_epoch = 1,bsize = 32,X1 = X1, X2 = X2, X3 = X3,X4 = X4,X5 = X5,X6 = X6,X7 = X7,X8 = X8,X9 = X9,X10 = X10,Xif = Xif,y = y)
+#Evaluate the model on test data
+evaluate_model(model = fitted_model,X1_test = X1_test, X2_test = X2_test, X3_test = X3_test,X4_test = X4_test,X5_test = X5_test,X6_test = X6_test,X7_test = X7_test,X8_test = X8_test,X9_test = X9_test,X10_test = X10_test,Xif_test = Xif_test,y_test = y_test,bsize = 32)
+```
