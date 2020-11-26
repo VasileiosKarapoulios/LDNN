@@ -56,3 +56,21 @@ The evaluation results.
 \description{
 Evaluate the fitted Neural Network model (Keras).
 }
+\examples{
+X1_test <- matrix(runif(500*20), nrow=500, ncol=20)
+X2_test <- matrix(runif(500*24), nrow=500, ncol=24)
+X3_test <- matrix(runif(500*24), nrow=500, ncol=24)
+X4_test <- matrix(runif(500*24), nrow=500, ncol=24)
+X5_test <- matrix(runif(500*16), nrow=500, ncol=16)
+X6_test <- matrix(runif(500*16), nrow=500, ncol=16)
+X7_test <- matrix(runif(500*16), nrow=500, ncol=16)
+X8_test <- matrix(runif(500*16), nrow=500, ncol=16)
+X9_test <- matrix(runif(500*16), nrow=500, ncol=16)
+X10_test <- matrix(runif(500*15), nrow=500, ncol=15)
+Xif_test <- matrix(runif(500*232), nrow=500, ncol=232)
+y_test <- matrix(runif(500), nrow=500, ncol=1)
+\dontrun{
+evaluate_model(fitted_model,X1_test,X2_test,X3_test,X4_test,X5_test,X6_test,
+X7_test,X8_test,X9_test,X10_test,Xif_test,y_test,32)
+}
+}

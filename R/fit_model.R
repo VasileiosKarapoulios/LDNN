@@ -18,6 +18,22 @@
 #' @param y The target variable.
 #' @return The fitted model.
 #' @description Fit the created Neural Network model (Keras).
+#' @examples
+#' X1 <- matrix(runif(500*20), nrow=500, ncol=20)
+#' X2 <- matrix(runif(500*24), nrow=500, ncol=24)
+#' X3 <- matrix(runif(500*24), nrow=500, ncol=24)
+#' X4 <- matrix(runif(500*24), nrow=500, ncol=24)
+#' X5 <- matrix(runif(500*16), nrow=500, ncol=16)
+#' X6 <- matrix(runif(500*16), nrow=500, ncol=16)
+#' X7 <- matrix(runif(500*16), nrow=500, ncol=16)
+#' X8 <- matrix(runif(500*16), nrow=500, ncol=16)
+#' X9 <- matrix(runif(500*16), nrow=500, ncol=16)
+#' X10 <- matrix(runif(500*15), nrow=500, ncol=15)
+#' Xif <- matrix(runif(500*232), nrow=500, ncol=232)
+#' y <- matrix(runif(500), nrow=500, ncol=1)
+#' \dontrun{
+#' fitted_model = fit_model(model,0,1,32,X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,Xif,y)
+#' }
 #' @import keras
 #' @export fit_model
 fit_model<-function(model, ver, n_epoch, bsize, X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, Xif, y){
