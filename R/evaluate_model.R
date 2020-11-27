@@ -33,19 +33,21 @@
 #' evaluate_model(fitted_model,X1_test,X2_test,X3_test,X4_test,X5_test,X6_test,
 #' X7_test,X8_test,X9_test,X10_test,Xif_test,y_test,32)
 #' }
+#' # The functions require to have python installed
+#' # As well as tensorflow, keras and reticulate package.
 #' @import keras
 #' @export evaluate_model
 evaluate_model <- function(model, X1_test, X2_test, X3_test, X4_test, X5_test, X6_test, X7_test, X8_test, X9_test, X10_test, Xif_test, y_test, bsize){
   res = model %>% evaluate(list(inp1 = X1_test,
-                          inp2 = X2_test,
-                          inp3 = X3_test,
-                          inp4 = X4_test,
-                          inp5 = X5_test,
-                          inp6 = X6_test,
-                          inp7 = X7_test,
-                          inp8 = X8_test,
-                          inp9 = X9_test,
-                          inp10 = X10_test,
-                          inpif = Xif_test), y_test, batch_size = bsize)
+                                inp2 = X2_test,
+                                inp3 = X3_test,
+                                inp4 = X4_test,
+                                inp5 = X5_test,
+                                inp6 = X6_test,
+                                inp7 = X7_test,
+                                inp8 = X8_test,
+                                inp9 = X9_test,
+                                inp10 = X10_test,
+                                inpif = Xif_test), y_test, batch_size = bsize)
   return(res)
 }

@@ -34,6 +34,8 @@
 #' \dontrun{
 #' fitted_model = fit_model(model,0,1,32,X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,Xif,y)
 #' }
+#' # The functions require to have python installed
+#' # As well as tensorflow, keras and reticulate package.
 #' @import keras
 #' @export fit_model
 fit_model<-function(model, ver, n_epoch, bsize, X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, Xif, y){
@@ -62,14 +64,14 @@ fit_model<-function(model, ver, n_epoch, bsize, X1, X2, X3, X4, X5, X6, X7, X8, 
              inp9 = X9,
              inp10 = X10,
              inpif = Xif), # sequence we're using for prediction 
-  y = y, # sequence we're predicting
-  batch_size = bsize, # how many samples to pass to our model at a time
-  epochs = n_epoch, # how many times we'll look at the whole dataset
-  validation_split = 0.1, # how much data to hold out for testing as we go along
-  callbacks = list(cp_callback),  # pass callback to training
-  verbose = ver) # printing during training
-
+    y = y, # sequence we're predicting
+    batch_size = bsize, # how many samples to pass to our model at a time
+    epochs = n_epoch, # how many times we'll look at the whole dataset
+    validation_split = 0.1, # how much data to hold out for testing as we go along
+    callbacks = list(cp_callback),  # pass callback to training
+    verbose = ver) # printing during training
+  
   fitted = model %>% load_model_weights_tf(filepath = checkpoint_path)
-
+  
   return(fitted)
 }

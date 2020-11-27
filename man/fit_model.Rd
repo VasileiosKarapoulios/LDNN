@@ -78,4 +78,6 @@ y <- matrix(runif(500), nrow=500, ncol=1)
 \dontrun{
 fitted_model = fit_model(model,0,1,32,X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,Xif,y)
 }
+# The functions require to have python installed
+# As well as tensorflow, keras and reticulate package.
 }

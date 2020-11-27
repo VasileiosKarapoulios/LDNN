@@ -73,4 +73,6 @@ y_test <- matrix(runif(500), nrow=500, ncol=1)
 evaluate_model(fitted_model,X1_test,X2_test,X3_test,X4_test,X5_test,X6_test,
 X7_test,X8_test,X9_test,X10_test,Xif_test,y_test,32)
 }
+# The functions require to have python installed
+# As well as tensorflow, keras and reticulate package.
 }

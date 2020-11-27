@@ -1,7 +1,7 @@
 Package: LDNN
 Type: Package
 Title: Longitudinal Data Neural Network
-Version: 1.7
+Version: 1.9
 Date: 2020-11-25
 Author: Vasileios Karapoulios
 Maintainer: Vasileios Karapoulios <billkarap123@gmail.com>
@@ -10,7 +10,7 @@ License: GNU General Public License
 RoxygenNote: 7.1.1
 LazyData: true
 Encoding: UTF-8
-Imports: devtools,reticulate,tensorflow
+Imports: devtools, reticulate, tensorflow
 Depends: keras
 Suggests: 
     testthat,knitr,rmarkdown
