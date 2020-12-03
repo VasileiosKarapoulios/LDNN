@@ -39,8 +39,6 @@
 #' @import keras
 #' @export fit_model
 fit_model<-function(model, ver, n_epoch, bsize, X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, Xif, y){
-  set.seed(1234)
-  
   checkpoint_path <- "checkpoints/cp.ckpt"
   
   # Create checkpoint callback
